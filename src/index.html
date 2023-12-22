@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-300">
+    <h1 class="text-3xl font-bold underline text-center">
+      National Early Warning Score
+    </h1>
+    <section class="flex flex-col">
+      <div class="text-center">
+        <label for="respiration-rate">Respiration Rate</label>
+        <input
+          type="number"
+          id="respiration-rate"
+          name="respiration-rate"
+          min="0"
+          max="100"
+        />
+      </div>
+      <div class="text-center">
+        <label for="oxygen-saturation">Oxygen Saturation</label>
+        <input
+          type="number"
+          id="oxygen-saturation"
+          name="oxygen-saturation"
+          min="0"
+          max="100"
+        />
+      </div>
+      <div class="text-center">
+        Oxygen Saturation 2
+        <label for="oxygen-saturation-2">Oxygen Saturation 2</label>
+        <input
+          type="number"
+          id="oxygen-saturation-2"
+          name="oxygen-saturation-2"
+          min="0"
+          max="100"
+        />
+      </div>
+      <div class="text-center">
+        Oxygen supplemented
+        <label for="oxygen-supplemented"></label>
+        <input type="checkbox" id="oxygen-supplemented"
+        name="oxygen-supplemented"
+      </div>
+      <div class="text-center">Systolic Blood pressure</div>
+      <div class="text-center">Heart rate</div>
+      <div class="text-center">AVPU Consciousness Scale</div>
+    </section>
+  </body>
+</html>
