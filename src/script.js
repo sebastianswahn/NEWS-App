@@ -1,8 +1,11 @@
-const calculateBtn = document.getElementById("calculateBtn");
+document.addEventListener("DOMContentLoaded", function () {
+  const calculateBtn = document.getElementById("calculateBtn");
 
-calculateBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  validateInput();
+  calculateBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    validateInput();
+    console.log(calculatePoints(document.querySelectorAll("input")));
+  });
 });
 
 function validateInput() {
@@ -71,18 +74,48 @@ function calculatePoints(input) {
     { min: 131, max: 500, points: 3 },
   ]);
 
-  const pointsInput6 = getPointsForSelect(input[6].value);
+  const pointsInput6 = getPointsForRange(parseFloat(input[6].value), [
+    { min: 20, max: 35.0, points: 3 },
+    { min: 35.1, max: 36.0, points: 1 },
+    { min: 36.1, max: 38.0, points: 0 },
+    { min: 38.1, max: 39.0, points: 1 },
+    { min: 39.1, max: 100, points: 3 },
+  ]);
 
-  function getPointsForSelect(selectedOption) {
-    switch (selectedOption) {
-      case "Alert":
-        return 0;
-      case "Voice":
-        return 3;
-      case "Pain":
-        return 3;
-      case "Unresponsive":
-        return 3;
-    }
+  const selectElement = document.getElementById("temperature");
+  const pointsInput7 = getPointsForSelect(selectElement.value);
+
+  return (
+    pointsInput0 +
+    pointsInput1 +
+    pointsInput2 +
+    pointsInput4 +
+    pointsInput5 +
+    pointsInput6 +
+    pointsInput7
+  );
+}
+
+function getPointsForSelect(selectedOption) {
+  switch (selectedOption) {
+    case "Alert":
+      return 0;
+    case "Voice":
+      return 3;
+    case "Pain":
+      return 3;
+    case "Unresponsive":
+      return 3;
   }
 }
+
+function getPointsForRange(value, ranges) {
+  for (const range of ranges) {
+    if (value >= range.min && value <= range.max) {
+      return range.points;
+    }
+  }
+  return 0;
+}
+
+console.log(calculatePoints(document.querySelectorAll("input")));
