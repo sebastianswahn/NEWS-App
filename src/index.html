@@ -6,11 +6,11 @@
     <link href="/dist/output.css" rel="stylesheet" />
   </head>
   <body class="bg-gray-300">
-    <h1 class="text-3xl font-bold underline text-center">
+    <h1 class="text-3xl font-bold text-center border-2 border-solid p-4">
       National Early Warning Score
     </h1>
     <section class="flex flex-col">
-      <div class="text-center">
+      <div class="text-center border-2 border-solid p-4">
         <label for="respiration-rate">Respiration Rate</label>
         <input
           type="number"
@@ -20,7 +20,7 @@
           max="100"
         />
       </div>
-      <div class="text-center">
+      <div class="text-center border-2 border-solid p-4">
         <label for="oxygen-saturation">Oxygen Saturation</label>
         <input
           type="number"
@@ -30,8 +30,7 @@
           max="100"
         />
       </div>
-      <div class="text-center">
-        Oxygen Saturation 2
+      <div class="text-center border-2 border-solid p-4">
         <label for="oxygen-saturation-2">Oxygen Saturation 2</label>
         <input
           type="number"
@@ -41,15 +40,52 @@
           max="100"
         />
       </div>
-      <div class="text-center">
-        Oxygen supplemented
-        <label for="oxygen-supplemented"></label>
-        <input type="checkbox" id="oxygen-supplemented"
-        name="oxygen-supplemented"
+      <div class="text-center border-2 border-solid p-4">
+        <label for="oxygen-supplemented">Oxygen supplemented</label>
+        <input
+          type="checkbox"
+          id="oxygen-supplemented"
+          name="oxygen-supplemented"
+        />
       </div>
-      <div class="text-center">Systolic Blood pressure</div>
-      <div class="text-center">Heart rate</div>
-      <div class="text-center">AVPU Consciousness Scale</div>
+      <div class="text-center border-2 border-solid p-4">
+        <label for="systolic-blood-pressure">Systolic Blood pressure</label>
+        <input
+          type="number"
+          id="systolic-blood-pressure"
+          name="systolic-blood-pressure"
+          min="0"
+          max="300"
+        />
+      </div>
+      <div class="text-center border-2 border-solid p-4">
+        <label for="heart-rate">Heart Rate</label>
+        <input
+          type="number"
+          id="heart-rate"
+          name="heart-rate"
+          min="0"
+          max="300"
+        />
+      </div>
+      <div class="text-center border-2 border-solid p-4">
+        <label for="avpu">Consciousness</label>
+        <select type="select" id="avpu" name="avpu">
+          <option value="alert">Alert</option>
+          <option value="voice">Voice</option>
+          <option value="pain">Pain</option>
+          <option value="unresponsive">Unresponsive</option>
+        </select>
+      </div>
+      <div class="text-center m-4">
+        <button
+          id="calculateBtn"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Calculate
+        </button>
+      </div>
     </section>
+    <script src="./script.js"></script>
   </body>
 </html>
